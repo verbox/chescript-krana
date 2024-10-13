@@ -1,6 +1,6 @@
 package org.chescript.krana.common.model;
 
-public class Card {
+public class CardPhenotype {
 	String description;
 
 	public String getDescription() {

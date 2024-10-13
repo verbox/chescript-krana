@@ -1,6 +1,6 @@
 package org.krana;
 
-import org.chescript.krana.common.model.Card;
+import org.chescript.krana.common.model.CardPhenotype;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class KranaServerApplication {
 
 	public static void main(String[] args) {
-		Card card = new Card();
+		CardPhenotype card = new CardPhenotype();
 		SpringApplication.run(KranaServerApplication.class, args);
 	}
 
