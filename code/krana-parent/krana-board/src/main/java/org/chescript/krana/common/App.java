@@ -1,4 +1,4 @@
-package org.krana.common;
+package org.chescript.krana.common;
 
 /**
  * Hello world!
