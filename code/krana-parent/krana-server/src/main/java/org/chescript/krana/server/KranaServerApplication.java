@@ -1,4 +1,4 @@
-package org.krana;
+package org.chescript.krana.server;
 
 import org.chescript.krana.common.model.CardPhenotype;
 import org.springframework.boot.SpringApplication;
