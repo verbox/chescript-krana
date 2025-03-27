@@ -1,27 +1,19 @@
 package org.chescript.krana.common.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 public class CardPhenotype {
-	String description;
-	CardImage cardImage;
-	
-	
-
-	public CardImage getCardImage() {
-		return cardImage;
-	}
-
-	public void setCardImage(CardImage cardImage) {
-		this.cardImage = cardImage;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	
-	
+	private String description;
+	private Integer offence;
+	private Integer defence;
+	private String name;
+	private String label;
+	private Integer lore;
+	private CardImage cardImage;
+	private 
 }
