@@ -27,8 +27,4 @@ public class KranaMessage {
 	public KranaMessage() {
 		super();
 	}
-	
-	
-	
-	
 }

@@ -15,5 +15,4 @@ public class CardPhenotype {
 	private String label;
 	private Integer lore;
 	private CardImage cardImage;
-	private 
 }
