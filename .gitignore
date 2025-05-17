@@ -85,3 +85,15 @@ local.properties
 # Uncomment this line if you wish to ignore the project description file.
 # Typically, this file would be tracked if it contains build/dependency configurations:
 #.project
+code/krana-parent/krana-web-common/target/maven-archiver/pom.properties
+code/krana-parent/krana-web-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+code/krana-parent/krana-web-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+code/krana-parent/krana-board/.classpath
+code/krana-parent/krana-board/.project
+code/krana-parent/krana-board/.settings/org.eclipse.core.resources.prefs
+code/krana-parent/krana-board/.settings/org.eclipse.jdt.core.prefs
+code/krana-parent/krana-board/.settings/org.eclipse.m2e.core.prefs
+code/krana-parent/krana-web-common/.classpath
+code/krana-parent/krana-web-common/.gitignore
+code/krana-parent/krana-web-common/.project
+code/krana-parent/.project

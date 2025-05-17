@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Maven Clean Install",
+      "type": "shell",
+      "command": "mvn clean install",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run krana-server.jar with debug",
+      "type": "shell",
+      "command": "java -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005 -jar $(ls ${workspaceFolder}/krana-server/target/krana-server*.jar | head -n 1)",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [],
+      "detail": "Start krana-server.jar in debug mode"
+    }
+  ]
+}

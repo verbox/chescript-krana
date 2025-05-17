@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "name": "Attach to krana-server on port 5005",
+        "type": "java",
+        "request": "attach",
+        "hostName": "localhost",
+        "port": 5005
+    },
+    {
+        "type": "java",
+        "name": "Spring Boot-KranaClientApplication<krana-client>",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "mainClass": "org.chescript.krana.KranaClientApplication",
+        "projectName": "krana-client",
+        "args": "",
+        "envFile": "${workspaceFolder}/.env"
+    }
+]
+}
