@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class KranaServerApplication {
 
 	public static void main(String[] args) {
-		CardPhenotype card = new CardPhenotype();
+		CardPhenotype card = null;
 		SpringApplication.run(KranaServerApplication.class, args);
 	}
 

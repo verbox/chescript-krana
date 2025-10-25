@@ -1,0 +1,21 @@
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Game logic packages: DEBUG during development -->
+  <logger name="org.chescript.krana.common.model.board" level="DEBUG"/>
+  <logger name="org.chescript.krana.common.model.action" level="DEBUG"/>
+  <logger name="org.chescript.krana.common.model.io" level="DEBUG"/>
+  <logger name="org.chescript.krana.common.model.repository" level="DEBUG"/>
+
+  <!-- Root logger: INFO for general runtime messages -->
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>
+

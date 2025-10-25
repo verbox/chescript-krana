@@ -1,5 +1,8 @@
 package org.chescript.krana.common.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 
 @Data
@@ -9,4 +12,11 @@ public class CardImage {
     // Optionally, add more metadata if needed
 
     // Constructor, getters, etc.
+    @JsonCreator
+    public CardImage(
+            @JsonProperty("imageId") String imageId,
+            @JsonProperty("filename") String filename) {
+        this.imageId = imageId;
+        this.filename = filename;
+    }
 }
