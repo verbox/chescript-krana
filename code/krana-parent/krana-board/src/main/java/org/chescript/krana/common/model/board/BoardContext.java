@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import org.chescript.krana.common.model.instance.CardInstance;
 import org.chescript.krana.common.model.action.ActionEffect;
+import org.chescript.krana.common.model.action.StateChange;
 import org.chescript.krana.common.util.GameLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +25,7 @@ public class BoardContext {
 
     private final Map<String, PlayerState> players = new HashMap<>();
     private final List<String> eventLog = new ArrayList<>();
+    private final List<StateChange> pendingChanges = new ArrayList<>();
     private String activePlayerId;
     private int turnNumber = 1;
 
@@ -108,6 +110,26 @@ public class BoardContext {
                 break;
         }
         GameLog.event(this, "moveCard: moved card " + card.getId() + " to " + target + " (owner=" + owner.getPlayerId() + ")");
+    }
+
+    /**
+     * Add a StateChange to the pending queue. This allows StateChange.apply to
+     * schedule follow-up changes while an effect is being applied.
+     */
+    public void addChange(StateChange change) {
+        if (change != null) {
+            pendingChanges.add(change);
+        }
+    }
+
+    /**
+     * Drain and return pending changes. The returned list is a copy and draining
+     * clears the internal queue.
+     */
+    public List<StateChange> drainPendingChanges() {
+        List<StateChange> copy = new ArrayList<>(pendingChanges);
+        pendingChanges.clear();
+        return copy;
     }
 
 }

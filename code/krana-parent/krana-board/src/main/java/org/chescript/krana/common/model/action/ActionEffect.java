@@ -69,14 +69,26 @@ public class ActionEffect {
 
     /**
      * Apply this effect to the given board context by running each StateChange
-     * and appending events to the board's event log.
+     * and appending events to the board's event log. Also process any pending
+     * changes scheduled on the BoardContext until none remain.
      */
     public void apply(BoardContext ctx) {
+        // apply own changes
         for (StateChange c : new ArrayList<>(changes)) {
             c.apply(ctx);
         }
+        // record events
         for (String e : events) {
             GameLog.event(ctx, e);
+        }
+        // process pending changes scheduled during application
+        List<StateChange> pending = ctx.drainPendingChanges();
+        while (!pending.isEmpty()) {
+            for (StateChange pc : new ArrayList<>(pending)) {
+                pc.apply(ctx);
+            }
+            // append any new pending changes
+            pending = ctx.drainPendingChanges();
         }
     }
 
